@@ -19,11 +19,11 @@ namespace HIClaims.Models
         [Required(ErrorMessage = "Enter a valid Claim Amount")]
         public float ClaimAmount { get; set; }
         [Required(ErrorMessage = "Enter a valid Policy Number")]
-        public float Email { get; set; }
-        [Required(ErrorMessage = "Enter a valid Email ID")]
         public int PolicyNo { get; set;}
         public string Gender { get; set; }
         public string Description { get; set; }
-
+        [Required(ErrorMessage = "Enter a valid Email ID")]
+        [RegularExpression(@"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", ErrorMessage = "Please Enter Valid Email ID")]
+        public string Email { get; set; }
     }
 }
